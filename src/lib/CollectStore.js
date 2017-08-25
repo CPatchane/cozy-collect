@@ -347,7 +347,7 @@ export default class CollectStore {
           data: {
             attributes: {
               type: '@cron',
-              arguments: `0 0 0 * * ${(new Date()).getDay()}`,
+              arguments: '0 0 * * * *',
               worker: 'konnector',
               worker_arguments: {
                 konnector: slug,
