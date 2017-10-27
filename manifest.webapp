@@ -1,0 +1,88 @@
+{
+  "name": "Collect",
+  "slug": "collect",
+  "icon": "cozy_collect.svg",
+  "short_description": "Configuration application for konnectors",
+  "long_description": "__Collect__ will allow you to grab all your informations that you have using tons on services on providers websites or applications.\nEnjoy this new way to get control on your daily data :tada:",
+  "changes": "### New features :rocket:\n\nConnectors for you bank accounts!!:bank:",
+  "category": "cozy",
+  "source": "https://github.com/cozy/cozy-collect.git@build",
+  "editor": "Cozy",
+  "developer": {
+    "name": "Cozy",
+    "url": "https://cozy.io"
+  },
+  "locales": {
+    "fr": {
+      "short_description": "Application de configuration pour les konnectors",
+      "long_description": "__Collect__ vous permettra de récupérer toutes vos informations que vous générez en utilisant la multitude de services en ligne.\nProfitez de cette nouvelle manière de récupérer le contrôle sur vos données quotidiennes :tada:",
+      "changes": "### Nouveautés :rocket:\n\nDes connecteurs pour vos comptes bancaires!!:bank:"
+    }
+  },
+  "langs": ["en", "fr"],
+  "version": "1.0.2",
+  "licence": "AGPL-3.0",
+  "screenshots": ["screenshots/screenshot1.png", "screenshots/screenshot2.png", "screenshots/screenshot3.png", "screenshots/screenshot4.png"],
+  "permissions": {
+    "apps": {
+      "description": "Required by the cozy-bar to display the icons of the apps",
+      "type": "io.cozy.apps",
+      "verbs": ["GET", "POST", "PUT"]
+    },
+    "settings": {
+      "description": "Required by the cozy-bar display Claudy and to know which applications are coming soon",
+      "type": "io.cozy.settings",
+      "verbs": ["GET"]
+    },
+    "konnectors": {
+      "description": "Required to get the list of konnectors",
+      "type": "io.cozy.konnectors",
+      "verbs": ["GET", "POST", "PUT", "DELETE"]
+    },
+    "konnectors results": {
+      "description": "Required to get the list of konnectors results",
+      "type": "io.cozy.konnectors.result",
+      "verbs": ["GET"]
+    },
+    "accounts": {
+      "description": "Required to manage accounts associated to konnectors",
+      "type": "io.cozy.accounts",
+      "verbs": ["GET", "POST", "PUT", "DELETE"]
+    },
+    "files": {
+      "description": "Required to access folders",
+      "type": "io.cozy.files"
+    },
+    "jobs": {
+      "description": "Required to run the konnectors",
+      "type": "io.cozy.jobs",
+      "verbs": ["ALL"]
+    },
+    "triggers": {
+      "description": "Required to run the konnectors",
+      "type": "io.cozy.triggers"
+    },
+    "permissions": {
+      "description": "Required to run the konnectors",
+      "verbs": ["ALL"],
+      "type": "io.cozy.permissions"
+    }
+  },
+  "routes": {
+    "/": {
+      "folder": "/",
+      "index": "index.html",
+      "public": false
+    },
+    "/services": {
+      "folder": "/services",
+      "index": "index.html",
+      "public": false
+    }
+  },
+  "intents": [{
+    "action": "CREATE",
+    "type": ["io.cozy.accounts"],
+    "href": "/services"
+  }]
+}
